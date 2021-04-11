@@ -15,7 +15,8 @@
     <tr>
       <td>{{$user->name}}</td>
       <td>@foreach($user->roles as $role) {{$role->name}} @endforeach</td>
-      <td><a href="{{route('add_user_role', $user)}}" class="btn btn-danger">Add Role</a></td>
+      <td><a href="{{route('add_user_role', $user)}}" class="btn btn-info">Add Role</a></td>
+      <td><a href="{{route('delele_user_role', $user)}}" class="btn btn-danger">Delete Role</a></td>
     </tr>
     @endforeach
    

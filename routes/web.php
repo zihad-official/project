@@ -21,6 +21,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
 
+Route::post('/search', [PostController::class, 'search_post'])->name('search_post');
+
 Route::middleware('auth')->group(function(){
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
@@ -66,7 +68,9 @@ Route::get('/user_role_manage', [RoleController::class, 'user_role_manage'])->na
 
 Route::get('/add_user_role/{user}', [RoleController::class, 'add_user_role'])->name('add_user_role');
 
-Route::post('user_role_create/{user}', [RoleController::class, 'user_role_create'])->name('user_role_create');
+Route::post('/user_role_create/{user}', [RoleController::class, 'user_role_create'])->name('user_role_create');
+
+Route::get('/delete_user_role/{user}', [RoleController::class, 'delete_user_role'])->name('delele_user_role');
 
 
 });

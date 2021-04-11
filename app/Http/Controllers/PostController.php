@@ -103,4 +103,13 @@ class PostController extends Controller
         return redirect()->route('user.posts');
 
     }
+
+
+    public function search_post(Request $request){
+        // dd($request['search_post']);
+        $search_post = $request['search_post'];
+        $posts = Post::where('title', 'LIKE', "%$search_post%")->get();
+        return view('admin.posts.view_all_post', ['posts'=>$posts]);
+        // dd($posts);
+    }   
 }

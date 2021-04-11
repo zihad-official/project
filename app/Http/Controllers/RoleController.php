@@ -91,4 +91,12 @@ class RoleController extends Controller
         // $user->roles()->attach($role);
         return redirect()->route('user_role_manage');
     }
+
+
+
+    public function delete_user_role($id){
+        $role = Role::where("user_id", $id)->get();
+        $role->users->delete();
+        return redirect()->back();
+    }
 }

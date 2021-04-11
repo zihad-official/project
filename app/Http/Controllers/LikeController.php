@@ -26,7 +26,9 @@ class LikeController extends Controller
     }
 
     public function unliked_post($post_id){
-        $data = Like::wherePostId($post_id);
+        $user = Auth()->user()->id;
+        $data = Like::wherePostId($post_id)
+                    ->where('user_id',  $user);        //$user = auth()->user();
         $data->delete();
         return Redirect::back();
     }
