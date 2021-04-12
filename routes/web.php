@@ -73,4 +73,7 @@ Route::post('/user_role_create/{user}', [RoleController::class, 'user_role_creat
 Route::get('/delete_user_role/{user}', [RoleController::class, 'delete_user_role'])->name('delele_user_role');
 
 
+Route::resource('category', CategoryController::class);
+
+
 });
