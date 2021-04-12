@@ -65,6 +65,7 @@
     <h5 class="mt-0">{{$comment->user->name}}</h5>
     {{$comment->comment_body}}
   </div>
+  <p>On {{$comment->created_at->diffForHumans()}}</p>
 </div>
 @endforeach
 <!-- Comment with nested comments -->

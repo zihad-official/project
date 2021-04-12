@@ -73,7 +73,7 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        @yield('content');
+        @yield('content')
       </div>
 
       <!-- Sidebar Widgets Column -->
@@ -102,15 +102,19 @@
             <div class="row">
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
+
+
+                <!-- Categories List -->
+                <?php
+                  $categories = App\Models\Category::all();
+
+                ?>
+
+                @foreach($categories as $category)
                   <li>
-                    <a href="#">Web Design</a>
+                    <a href="#">{{$category->name}}</a>
                   </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">Freebies</a>
-                  </li>
+                @endforeach
                 </ul>
               </div>
               <div class="col-lg-6">

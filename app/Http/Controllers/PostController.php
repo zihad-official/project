@@ -7,7 +7,7 @@ use App\Models\Comment;
 use App\Models\Like;
 use App\Http\Controllers\Auth;
 use App\Http\Controllers\Redirect;
-
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -38,15 +38,18 @@ class PostController extends Controller
     }
 
     public function create(){
-        return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     public function store(){
         $inputs = request()->validate([
             'title'=>'required|min:8|max:225',
+            'category_id'=>'required',
             'post_image'=>'file',
             'body'=>'required'
         ]);
+
 
          if(request('post_image')){
              $inputs['post_image'] = request('post_image')->store('images');

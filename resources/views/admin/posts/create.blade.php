@@ -9,6 +9,19 @@
         <input type="text" name="title" class="form-control" id="title" aria-describedby="" placeholder="Enter Title">
    </div>
 
+
+    <div class="form-group">
+    <label for="category">Category</label>
+    <select name="category_id" id="">
+    @foreach($categories as $category)
+        <option value="{{$category->id}}">{{$category->name}}</option>
+        @endforeach
+    </select>
+    </div>
+  
+
+
+
    <div class="form-group"> 
     <label for="file" >File</label>
         <input type="file" name="post_image" class="form-control-file" id="post_image">
