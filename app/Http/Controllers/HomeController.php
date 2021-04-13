@@ -46,7 +46,8 @@ class HomeController extends Controller
 
         $this->validate( $request, [
             'name' => 'required',
-            'email' =>'required|unique:users,email,'.$user->id
+            'email' =>'required|unique:users,email,'.$user->id,
+            'password' => 'required'
         ]);
 
         $user->update($request->all());

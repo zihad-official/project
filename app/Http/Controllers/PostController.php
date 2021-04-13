@@ -112,7 +112,7 @@ class PostController extends Controller
         // dd($request['search_post']);
         $search_post = $request['search_post'];
         $posts = Post::where('title', 'LIKE', "%$search_post%")->get();
-        return view('admin.posts.view_all_post', ['posts'=>$posts]);
+        return view('home', ['posts'=>$posts]);
         // dd($posts);
     }   
 }

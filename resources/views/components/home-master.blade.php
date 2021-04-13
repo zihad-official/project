@@ -105,16 +105,15 @@
 
 
                 <!-- Categories List -->
-                <?php
-                  $categories = App\Models\Category::all();
-
-                ?>
-
-                @foreach($categories as $category)
                   <li>
-                    <a href="#">{{$category->name}}</a>
+                  <a href="#">JavaScript</a>
                   </li>
-                @endforeach
+                  <li>
+                  <a href="#">JavaScript</a>
+                  </li>
+                  <li>
+                  <a href="#">JavaScript</a>
+                  </li>
                 </ul>
               </div>
               <div class="col-lg-6">

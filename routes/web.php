@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+// use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
@@ -74,6 +75,7 @@ Route::get('/delete_user_role/{user}', [RoleController::class, 'delete_user_role
 
 
 Route::resource('category', CategoryController::class);
+
 
 
 });
